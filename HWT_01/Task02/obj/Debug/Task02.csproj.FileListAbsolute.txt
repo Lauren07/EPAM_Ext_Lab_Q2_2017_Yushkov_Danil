@@ -1,0 +1,5 @@
+d:\мои документы\documents\visual studio 2015\Projects\HWT_01\Task02\bin\Debug\Task02.exe.config
+d:\мои документы\documents\visual studio 2015\Projects\HWT_01\Task02\bin\Debug\Task02.exe
+d:\мои документы\documents\visual studio 2015\Projects\HWT_01\Task02\bin\Debug\Task02.pdb
+d:\мои документы\documents\visual studio 2015\Projects\HWT_01\Task02\obj\Debug\Task02.exe
+d:\мои документы\documents\visual studio 2015\Projects\HWT_01\Task02\obj\Debug\Task02.pdb
