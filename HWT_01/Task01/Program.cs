@@ -2,12 +2,14 @@
 // Написать консольное приложение, которое проверяет принадлежность точки заштрихованной области.
 // Пользователь вводит координаты точки (x; y) и выбирает букву графика(a-к). В консоли должно высветиться сообщение: «Точка[(x; y)] принадлежит фигуре[г]».
 
+using System.Text;
+
 namespace Task01
 {
     using System;
     using System.Linq;
 
-    internal class Program
+    internal class Program 
     {
         private static Point ReadInputPoint()
         {
@@ -35,7 +37,10 @@ namespace Task01
 
         private static void Main(string[] args)
         {
-            var solver = new SolverMembershipIn();
+	        Console.InputEncoding = Encoding.Unicode;//todo pn без явного задания кодировки будет использована кодировка по умолчанию. Машина, на которой я проверяю настроена на английскую культуру, поэтому кириллические символы отображаются в ней как знаки вопроса. Следует учитывать такое специфичное поведение консоли в следующих заданиях :)
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			var solver = new SolverMembershipIn();
             bool? isInPlot = null;
             while (!isInPlot.HasValue)
             {
@@ -56,8 +61,8 @@ namespace Task01
                 {
                     var particleDenail = !isInPlot.Value ? "не " : string.Empty;
                     Console.WriteLine(
-                        $"Точка ({inputPoint.X};{inputPoint.Y}) {particleDenail}принадлежит фигуре '{lettPlot}'");
-                }
+                        $"Точка ({inputPoint.X};{inputPoint.Y}) {particleDenail}принадлежит фигуре '{lettPlot}'"); //todo pn лучше бы зациклил и спрашивал пользователя, нужно ли закрыть консоль
+				}
 
                 Console.ReadKey();
             }

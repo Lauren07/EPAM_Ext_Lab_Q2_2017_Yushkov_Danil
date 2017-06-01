@@ -1,4 +1,6 @@
-﻿namespace Task02
+﻿using System.Text;
+
+namespace Task02
 {
     using System;
 
@@ -58,7 +60,10 @@
 
         private static void Main(string[] args)
         {
-            double a = 0, b = 0, c = 0, h;
+	        Console.InputEncoding = Encoding.Unicode;
+	        Console.OutputEncoding = Encoding.Unicode;
+
+			double a = 0, b = 0, c = 0, h;
             bool isErrors;
             do
             {
