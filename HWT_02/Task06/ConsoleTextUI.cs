@@ -4,11 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class UserTextUI
+    public class ConsoleTextUI
     {
         private List<TextParameter> textParameters;
 
-        public UserTextUI()
+        public ConsoleTextUI()
         {
             this.textParameters = new List<TextParameter>();
             this.textParameters.Add(new TextParameter("bold"));

@@ -12,7 +12,7 @@ namespace Task06
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            var userTextUI = new UserTextUI();
+            var userTextUI = new ConsoleTextUI();
             while (true)
             {
                 userTextUI.DisplayUI();

@@ -24,9 +24,9 @@ namespace Task01
             Console.OutputEncoding = Encoding.Unicode;
             while (true)
             {
-                var sidesAB = UserUI.ReadRectSides();
+                var sidesAB = ConsoleUI.ReadRectSides();
                 var result = CalculateAreaRect(sidesAB.Item1, sidesAB.Item2);
-                UserUI.WriteResult(result);
+                ConsoleUI.WriteResult(result);
             }
         }
     }

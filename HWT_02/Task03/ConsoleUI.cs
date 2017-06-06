@@ -1,8 +1,8 @@
-﻿namespace Task04
+﻿namespace Task03
 {
     using System;
 
-    public static class UserUI
+    public static class ConsoleUI
     {
         public static int ReadCountStrings()
         {

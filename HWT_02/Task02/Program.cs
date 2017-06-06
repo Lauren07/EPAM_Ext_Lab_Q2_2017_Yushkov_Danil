@@ -22,9 +22,9 @@
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            var countStrs = UserUI.ReadCountStrings();
+            var countStrs = ConsoleUI.ReadCountStrings();
             var result = GenerateStrings(countStrs);
-            UserUI.WriteResultStrings(result);
+            ConsoleUI.WriteResultStrings(result);
             Console.ReadKey();
         }
     }

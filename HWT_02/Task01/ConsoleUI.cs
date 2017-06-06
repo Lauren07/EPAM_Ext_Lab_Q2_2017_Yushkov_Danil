@@ -2,7 +2,7 @@
 {
     using System;
 
-    public static class UserUI
+    public static class ConsoleUI
     {
         public static Tuple<int, int> ReadRectSides()
         {
