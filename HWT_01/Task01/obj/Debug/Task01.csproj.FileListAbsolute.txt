@@ -10,3 +10,6 @@ D:\мои документы\Documents\Visual Studio 2015\Projects\HWT_01\Task01
 D:\мои документы\Documents\Visual Studio 2015\Projects\HWT_01\Task01\bin\Debug\HWT_01.exe
 D:\мои документы\Documents\Visual Studio 2015\Projects\HWT_01\Task01\bin\Debug\HWT_01.pdb
 D:\мои документы\Documents\Visual Studio 2015\Projects\HWT_01\Task01\obj\Debug\Task01.csprojResolveAssemblyReference.cache
+D:\мои документы\Desktop\универ\EPAM\EPAM_Ext_Lab_Q2_2017_Yushkov_Danil\HWT_01\Task01\bin\Debug\HWT_01.exe.config
+D:\мои документы\Desktop\универ\EPAM\EPAM_Ext_Lab_Q2_2017_Yushkov_Danil\HWT_01\Task01\obj\Debug\HWT_01.exe
+D:\мои документы\Desktop\универ\EPAM\EPAM_Ext_Lab_Q2_2017_Yushkov_Danil\HWT_01\Task01\obj\Debug\HWT_01.pdb
