@@ -39,7 +39,7 @@ namespace Task05
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            var result = CalculateSum(1000, 3, 5);
+            var result = CalculateSum(1000, 3, 5);//todo pn ты слишком усложнил реализацию этого задания, но молодец, что попробовал использовать параметры
             Console.WriteLine($"Сумма чисел всех чисел меньше 1000 и кратных 3 или 5: {result}");
             Console.ReadKey();
         }

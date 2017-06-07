@@ -13,8 +13,8 @@ namespace Task06
             Console.OutputEncoding = Encoding.Unicode;
 
             var userTextUI = new ConsoleTextUI();
-            while (true)
-            {
+            while (true)//todo pn как пользователю программно выйти из консоли? он может бояться нажать на крестик.
+			{
                 userTextUI.DisplayUI();
                 var index = userTextUI.InputIndexParameter();
                 if (!userTextUI.TryChangeText(index))

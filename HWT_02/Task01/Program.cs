@@ -22,7 +22,7 @@ namespace Task01
         {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-            while (true)
+            while (true)//todo pn как пользователю программно выйти из консоли? он может бояться нажать на крестик.
             {
                 var sidesAB = ConsoleUI.ReadRectSides();
                 var result = CalculateAreaRect(sidesAB.Item1, sidesAB.Item2);
