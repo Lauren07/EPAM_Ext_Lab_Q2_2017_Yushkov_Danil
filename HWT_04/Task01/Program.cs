@@ -18,7 +18,7 @@ namespace Task01
 
         private static string[] SplitString(string str)
         {
-            var separators = " ,:;.-!?";
+            var separators = " ,:;.-!?";//todo pn говорил же использовать методы класса Char(IsDigit, IsSeparator)
             return str.Trim().Split(separators.ToCharArray()).Where(word => word.Length > 0).ToArray();
         }
 
@@ -27,7 +27,7 @@ namespace Task01
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            while (true)
+            while (true)//todo бесконечный цикл
             {
                 var inputString = ConsoleUI.ReadString();
                 var words = SplitString(inputString);
