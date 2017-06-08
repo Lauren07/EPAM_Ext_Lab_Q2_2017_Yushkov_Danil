@@ -70,6 +70,15 @@ namespace Task01 {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на exit.
+        /// </summary>
+        internal static string ExitMessage {
+            get {
+                return ResourceManager.GetString("ExitMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Введите строку:.
         /// </summary>
         internal static string InputMessage {

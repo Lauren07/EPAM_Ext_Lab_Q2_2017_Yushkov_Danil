@@ -120,6 +120,9 @@
   <data name="EmptyStringMessage" xml:space="preserve">
     <value>Ошибка! Введена пустая строка.</value>
   </data>
+  <data name="ExitMessage" xml:space="preserve">
+    <value>exit</value>
+  </data>
   <data name="InputMessage" xml:space="preserve">
     <value>Введите строку:</value>
   </data>

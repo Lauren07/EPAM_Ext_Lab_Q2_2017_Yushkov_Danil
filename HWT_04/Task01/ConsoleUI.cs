@@ -8,6 +8,7 @@ namespace Task01
         {
             for (; ;)
             {
+                Console.WriteLine($"Ключевое слово \"{MessagesResource.ExitMessage}\" для выхода из программы");
                 Console.WriteLine(MessagesResource.InputMessage);
                 var str = Console.ReadLine();
                 if (str.Length > 0)
