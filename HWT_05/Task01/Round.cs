@@ -9,7 +9,7 @@ namespace Task01
 
         public Point Center
         {
-            get { return this.center ?? new Point(0, 0); }
+            get { return this.center ?? new Point(0, 0); }//todo pn если тело геттера или сеттера не пустое, то лучше фигурные скобки на отдельных строках размещать. Значения по умолчанию - в константы.
             set { this.center = value; }
         }
 
