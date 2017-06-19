@@ -6,7 +6,7 @@ namespace Task01
     {
         private int lengthWork;
 
-        public int LengthWorkInYears//todo pn нет проверки на то, что он меньше возраста
+        public int LengthWorkInYears
         {
             get
             {
@@ -15,7 +15,7 @@ namespace Task01
 
             set
             {
-                if (value < 0)
+                if (value < 0 || value > this.Age)
                 {
                     throw new Exception("Incorrect Length of work.");
                 }

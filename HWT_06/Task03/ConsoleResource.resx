@@ -117,22 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AreaRectMessage" xml:space="preserve">
+    <value>Площадь прямоугольника:</value>
+  </data>
+  <data name="CenterRingMessage" xml:space="preserve">
+    <value>Центр кольца: </value>
+  </data>
+  <data name="CenterRoundMessage" xml:space="preserve">
+    <value>Центр окружности: </value>
+  </data>
   <data name="DividingLine" xml:space="preserve">
     <value>_______________________________________________________________________________</value>
   </data>
   <data name="ErrorInputFormat" xml:space="preserve">
     <value>Неверный формат ввода данных.</value>
   </data>
+  <data name="FirstPointMessage" xml:space="preserve">
+    <value>Координаты первой точки: </value>
+  </data>
+  <data name="HeightRectMessage" xml:space="preserve">
+    <value>Высота прямоугольника:</value>
+  </data>
+  <data name="InnerRadius" xml:space="preserve">
+    <value>Внутренний радиус:</value>
+  </data>
+  <data name="InputCenterRound" xml:space="preserve">
+    <value>Введите точку центра</value>
+  </data>
+  <data name="InputFirstPointRect" xml:space="preserve">
+    <value>Введите левую нижнюю точку прямоугольника</value>
+  </data>
+  <data name="InputInnerRadius" xml:space="preserve">
+    <value>Введите внутренний радиус</value>
+  </data>
   <data name="InputMessage" xml:space="preserve">
     <value>Введите названия типа фигуры из списка.</value>
   </data>
+  <data name="InputRadius" xml:space="preserve">
+    <value>Введите радиус </value>
+  </data>
+  <data name="InputSecondPointRect" xml:space="preserve">
+    <value>Введите правую верхнюю точку прямоугольника</value>
+  </data>
+  <data name="LengthBorderMessage" xml:space="preserve">
+    <value>Длина описанной окружности: </value>
+  </data>
+  <data name="LengthInnerBorderMessage" xml:space="preserve">
+    <value>Длина внутренней границы: </value>
+  </data>
+  <data name="LengthLineMessage" xml:space="preserve">
+    <value>Длина линии: </value>
+  </data>
+  <data name="LengthOuterBorderMessage" xml:space="preserve">
+    <value>Длина внешней границы: </value>
+  </data>
   <data name="MenuMessage" xml:space="preserve">
     <value>Введите нужную команду:</value>
+  </data>
+  <data name="OuterRadius" xml:space="preserve">
+    <value>Внешний радиус:</value>
+  </data>
+  <data name="PerimeterRectMessage" xml:space="preserve">
+    <value>Периметр прямоугольника:</value>
+  </data>
+  <data name="RadiusRoundMessage" xml:space="preserve">
+    <value>Радиус окружности: </value>
+  </data>
+  <data name="SecondPointMessage" xml:space="preserve">
+    <value>Координаты второй точки:</value>
   </data>
   <data name="SuccessAddedMessage" xml:space="preserve">
     <value>Фигура успешно создана.</value>
   </data>
   <data name="TypeNotFound" xml:space="preserve">
     <value>Тип введенной фигуры не найден.</value>
+  </data>
+  <data name="WidthRectMessage" xml:space="preserve">
+    <value>Ширина прямоугольника:</value>
   </data>
 </root>

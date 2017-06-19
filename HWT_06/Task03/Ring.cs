@@ -32,7 +32,7 @@ namespace Task03
         public override void Create()
         {
             base.Create();
-            Console.WriteLine("Введите внутренний радиус");
+            Console.WriteLine(ConsoleResource.InputInnerRadius);
             int r;
             for (; ;)
             {
@@ -50,9 +50,10 @@ namespace Task03
 
         public override void Display()
         {
-            Console.WriteLine($"Центр кольца: {this.Center}");
-            Console.WriteLine($"Внешний радиус: {this.Radius}, Внутренний радиус: {this.InnerRadius}");
-            Console.WriteLine($"Длина внешней границы: {this.LengthBorder:0.000}, Длина внутренней границы: {this.LengthInnerBorder:0.000}");
+            Console.WriteLine(ConsoleResource.CenterRingMessage + this.Center);
+            Console.WriteLine(ConsoleResource.OuterRadius + this.Radius);
+            Console.WriteLine(ConsoleResource.InnerRadius + this.InnerRadius);
+            Console.WriteLine($"{ConsoleResource.LengthOuterBorderMessage} {this.LengthBorder:0.000}, {ConsoleResource.LengthOuterBorderMessage} {this.LengthInnerBorder:0.000}");
         }
     }
 }

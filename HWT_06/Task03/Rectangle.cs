@@ -68,17 +68,17 @@ namespace Task03
 
         public override void Display()
         {
-            Console.WriteLine($"Высота прямоугльника: {this.Height}");
-            Console.WriteLine($"Ширина прямоугольника: {this.Width}");
-            Console.WriteLine($"Площадь прямоугольника: {this.Area}");
-            Console.WriteLine($"Периметр прямоугольника: {this.Perimeter}");
+            Console.WriteLine(ConsoleResource.HeightRectMessage + this.Height);
+            Console.WriteLine(ConsoleResource.WidthRectMessage + this.Width);
+            Console.WriteLine(ConsoleResource.AreaRectMessage + this.Area);
+            Console.WriteLine(ConsoleResource.PerimeterRectMessage + this.Perimeter);
         }
 
         public override void Create()
         {
-            Console.WriteLine("Введите левую нижнюю точку прямоугольника");
+            Console.WriteLine(ConsoleResource.InputFirstPointRect);
             var p1 = Point.ReadPoint();
-            Console.WriteLine("Введите правую верхнюю точку прямоугольника");
+            Console.WriteLine(ConsoleResource.InputSecondPointRect);
             var p2 = Point.ReadPoint();
             this.Points = Tuple.Create(p1, p2);
         }

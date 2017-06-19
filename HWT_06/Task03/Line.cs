@@ -40,9 +40,9 @@ namespace Task03
 
         public override void Display()
         {
-            Console.WriteLine($"Коорд. первой точки: X={this.Points.Item1.X}  Y={this.Points.Item1.Y}");
-            Console.WriteLine($"Коорд. второй точки: X={this.Points.Item2.X}  Y={this.Points.Item2.Y}");
-            Console.WriteLine($"Длина линии: {this.LengthLine:0.000}");
+            Console.WriteLine(ConsoleResource.FirstPointMessage + this.Points.Item1);
+            Console.WriteLine(ConsoleResource.FirstPointMessage + this.Points.Item2);
+            Console.WriteLine($"{ConsoleResource.LengthLineMessage} {this.LengthLine:0.000}");
         }
 
         public override void Create()

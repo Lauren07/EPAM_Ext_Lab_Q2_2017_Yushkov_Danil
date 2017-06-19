@@ -61,6 +61,33 @@ namespace Task03 {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Площадь прямоугольника:.
+        /// </summary>
+        internal static string AreaRectMessage {
+            get {
+                return ResourceManager.GetString("AreaRectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Центр кольца: .
+        /// </summary>
+        internal static string CenterRingMessage {
+            get {
+                return ResourceManager.GetString("CenterRingMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Центр окружности: .
+        /// </summary>
+        internal static string CenterRoundMessage {
+            get {
+                return ResourceManager.GetString("CenterRoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на _______________________________________________________________________________.
         /// </summary>
         internal static string DividingLine {
@@ -79,6 +106,60 @@ namespace Task03 {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Координаты первой точки: .
+        /// </summary>
+        internal static string FirstPointMessage {
+            get {
+                return ResourceManager.GetString("FirstPointMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Высота прямоугольника:.
+        /// </summary>
+        internal static string HeightRectMessage {
+            get {
+                return ResourceManager.GetString("HeightRectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внутренний радиус:.
+        /// </summary>
+        internal static string InnerRadius {
+            get {
+                return ResourceManager.GetString("InnerRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите точку центра.
+        /// </summary>
+        internal static string InputCenterRound {
+            get {
+                return ResourceManager.GetString("InputCenterRound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите левую нижнюю точку прямоугольника.
+        /// </summary>
+        internal static string InputFirstPointRect {
+            get {
+                return ResourceManager.GetString("InputFirstPointRect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите внутренний радиус.
+        /// </summary>
+        internal static string InputInnerRadius {
+            get {
+                return ResourceManager.GetString("InputInnerRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Введите названия типа фигуры из списка..
         /// </summary>
         internal static string InputMessage {
@@ -88,11 +169,101 @@ namespace Task03 {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите радиус .
+        /// </summary>
+        internal static string InputRadius {
+            get {
+                return ResourceManager.GetString("InputRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите правую верхнюю точку прямоугольника.
+        /// </summary>
+        internal static string InputSecondPointRect {
+            get {
+                return ResourceManager.GetString("InputSecondPointRect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Длина описанной окружности: .
+        /// </summary>
+        internal static string LengthBorderMessage {
+            get {
+                return ResourceManager.GetString("LengthBorderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Длина внутренней границы: .
+        /// </summary>
+        internal static string LengthInnerBorderMessage {
+            get {
+                return ResourceManager.GetString("LengthInnerBorderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Длина линии: .
+        /// </summary>
+        internal static string LengthLineMessage {
+            get {
+                return ResourceManager.GetString("LengthLineMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Длина внешней границы: .
+        /// </summary>
+        internal static string LengthOuterBorderMessage {
+            get {
+                return ResourceManager.GetString("LengthOuterBorderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Введите нужную команду:.
         /// </summary>
         internal static string MenuMessage {
             get {
                 return ResourceManager.GetString("MenuMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Внешний радиус:.
+        /// </summary>
+        internal static string OuterRadius {
+            get {
+                return ResourceManager.GetString("OuterRadius", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Периметр прямоугольника:.
+        /// </summary>
+        internal static string PerimeterRectMessage {
+            get {
+                return ResourceManager.GetString("PerimeterRectMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Радиус окружности: .
+        /// </summary>
+        internal static string RadiusRoundMessage {
+            get {
+                return ResourceManager.GetString("RadiusRoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Координаты второй точки:.
+        /// </summary>
+        internal static string SecondPointMessage {
+            get {
+                return ResourceManager.GetString("SecondPointMessage", resourceCulture);
             }
         }
         
@@ -111,6 +282,15 @@ namespace Task03 {
         internal static string TypeNotFound {
             get {
                 return ResourceManager.GetString("TypeNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ширина прямоугольника:.
+        /// </summary>
+        internal static string WidthRectMessage {
+            get {
+                return ResourceManager.GetString("WidthRectMessage", resourceCulture);
             }
         }
     }

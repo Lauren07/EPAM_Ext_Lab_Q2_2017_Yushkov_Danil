@@ -55,18 +55,18 @@ namespace Task03
 
         public override void Display()
         {
-            Console.WriteLine($"Центр окружности: {this.Center}");
-            Console.WriteLine($"Радиус окружности: {this.Radius}");
-            Console.WriteLine($"Длина описанной окружности: {this.LengthBorder:0.000}");
+            Console.WriteLine(ConsoleResource.CenterRoundMessage + this.Center);
+            Console.WriteLine(ConsoleResource.RadiusRoundMessage + this.Radius);
+            Console.WriteLine(ConsoleResource.LengthBorderMessage + $"{this.LengthBorder:0.000}");
         }
 
         public override void Create()
         {
-            Console.WriteLine("Введите точку центра (X Y):");
+            Console.WriteLine(ConsoleResource.InputCenterRound);
             this.Center = Point.ReadPoint();
             for (; ;)
             {
-                Console.WriteLine("Введите радиус:");
+                Console.WriteLine(ConsoleResource.InputRadius);
                 var radiusStr = Console.ReadLine();
                 if (int.TryParse(radiusStr, out this.radius))
                 {
