@@ -15,7 +15,7 @@ namespace Task03
         public override void Display()
         {
             base.Display();
-            Console.WriteLine($"Площадь круга: {this.Area}");
+            Console.WriteLine($"Площадь круга: {this.Area}");//todo pn раз уж добавил ресурсы, то все строки в них вынеси
         }
     }
 }

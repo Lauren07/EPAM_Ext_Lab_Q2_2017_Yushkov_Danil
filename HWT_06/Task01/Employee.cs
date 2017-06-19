@@ -6,7 +6,7 @@ namespace Task01
     {
         private int lengthWork;
 
-        public int LengthWorkInYears
+        public int LengthWorkInYears//todo pn нет проверки на то, что он меньше возраста
         {
             get
             {
