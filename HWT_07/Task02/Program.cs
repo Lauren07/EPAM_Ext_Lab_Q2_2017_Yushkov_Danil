@@ -17,14 +17,23 @@ namespace Task02
             return dictWords;
         }
 
-        private static void Main(string[] args)
-        {
+        private static void Main(string[] args)//todo pn работает неправильно: должно посчитать эти слова за 2 слова: "asdf.asdf" (см. условие задачи)
+		//Введите исходный текст
+		//   adsf asdf ASDF.Asdf as
+		//   Ниже представлена частота встречаемости слов формата<"слово" - "число вхождений">:
+		//   adsf - 1
+		//   asdf - 1
+		//   asdf.asdf - 1
+		//   as - 1
+		{
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
             var text = ConsoleUI.InputText();
             var dictFrequency = GetFrequency(text);
             ConsoleUI.OutputDict(dictFrequency);
-        }
-    }
+
+	        Console.ReadKey(); //todo pn а подождать после выполнения программы?
+		}
+	}
 }

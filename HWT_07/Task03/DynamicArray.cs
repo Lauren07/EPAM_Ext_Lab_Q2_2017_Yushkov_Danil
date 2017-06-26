@@ -52,8 +52,8 @@ namespace Task03
         {
             if (this.Capacity == this.Length)
             {
-                this.array = this.GenerateNewArray(this.Length * 2);
-            }
+                this.array = this.GenerateNewArray(this.Length * 2); //todo не очень хорошее решение с т.з. производительности. Представь, что у тебя в массиве 1млн элементов, а добавить нужно штук 100. Для чего выделять дополнительно ещё 1млн пустых записей? Лучше задать константой какое-то значение, на которое ты увеличиваешь массив при переполнении.
+			}
 
             this.array[this.Capacity] = newElement;
             this.Capacity++;
