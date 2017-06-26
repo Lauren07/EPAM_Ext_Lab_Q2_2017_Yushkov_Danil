@@ -18,6 +18,8 @@ namespace Task02
             office.AddPerson(persons[2], time.AddHours(10));
             office.DeletePerson(persons[1]);
             office.AddPerson(persons[3], time);
+
+	        Console.ReadKey();//todo pn атата
         }
     }
 }

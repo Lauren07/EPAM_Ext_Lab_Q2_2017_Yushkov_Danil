@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Task01
 {
-    internal class Program
+    internal class Program //todo pn ну, а как же вывести в консоль результат?
     {
         private static string[] Sort(string[] strs, IComparer<string> comparer)
         {

@@ -18,7 +18,7 @@ namespace Task02
                 return;
             }
 
-            Console.WriteLine($"'{this.GetGreeting(time)}, {person.Name}!', - сказал {this.Name}.");
+            Console.WriteLine($"'{this.GetGreeting(time)}, {person.Name}!', - сказал {this.Name}.");//todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
         }
 
         public void SayBye(Person person)
@@ -33,7 +33,7 @@ namespace Task02
 
         private string GetGreeting(DateTime time)
         {
-            if (time.Hour < 12)
+            if (time.Hour < 12)//todo pn хардкод
             {
                 return GreetingsPhrases.Morning;
             }
