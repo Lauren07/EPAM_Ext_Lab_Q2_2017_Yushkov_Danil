@@ -9,7 +9,7 @@ namespace Task02
     {
         private static Dictionary<string, int> GetFrequency(string text)
         {
-            var separators = new[] { ' ', ',' };
+            var separators = new[] { ' ', '.' };
             var dictWords = text.Split(separators)
                 .Where(word => word.Length > 0)
                 .GroupBy(word => word.ToLower())
@@ -17,15 +17,8 @@ namespace Task02
             return dictWords;
         }
 
-        private static void Main(string[] args)//todo pn работает неправильно: должно посчитать эти слова за 2 слова: "asdf.asdf" (см. условие задачи)
-		//Введите исходный текст
-		//   adsf asdf ASDF.Asdf as
-		//   Ниже представлена частота встречаемости слов формата<"слово" - "число вхождений">:
-		//   adsf - 1
-		//   asdf - 1
-		//   asdf.asdf - 1
-		//   as - 1
-		{
+        private static void Main(string[] args)
+        {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
@@ -33,7 +26,7 @@ namespace Task02
             var dictFrequency = GetFrequency(text);
             ConsoleUI.OutputDict(dictFrequency);
 
-	        Console.ReadKey(); //todo pn а подождать после выполнения программы?
-		}
-	}
+            Console.ReadKey(); //todo pn а подождать после выполнения программы?
+        }
+    }
 }

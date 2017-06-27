@@ -39,7 +39,7 @@ namespace Task01
             ConsoleUI.DisplayPersons(persons.ToArray());
             CrossOut(persons.ToArray());
 
-	        Console.ReadKey(); //todo pn а подождать после выполнения программы?
+            Console.ReadKey(); //todo pn а подождать после выполнения программы?
         }
     }
 }
