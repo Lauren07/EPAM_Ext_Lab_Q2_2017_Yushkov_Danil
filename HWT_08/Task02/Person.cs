@@ -11,34 +11,37 @@ namespace Task02
             this.Name = name;
         }
 
-        public void SayHello(Person person, DateTime time)
+        public void SayHello(Person person, DateTime time, IOutput outputWriter)
         {
             if (person == null)
             {
                 return;
             }
 
-            Console.WriteLine($"'{this.GetGreeting(time)}, {person.Name}!', - сказал {this.Name}.");//todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
+            var welcomePhrase = $"'{this.GetGreeting(time)}, {person.Name}!', - сказал {this.Name}.";
+            outputWriter.WriteMessage(welcomePhrase); //todo pn у отдельного класса бизнес логики не должно быть зависимости от класса вывода данных.
         }
 
-        public void SayBye(Person person)
+        public void SayBye(Person person, IOutput outputWriter)
         {
             if (person == null)
             {
                 return;
             }
 
-            Console.WriteLine($"'До свидания, {person.Name}', - сказал {this.Name}.");
+            var byePhrase = $"'До свидания, {person.Name}', - сказал {this.Name}.";
+            outputWriter.WriteMessage(byePhrase);
         }
 
         private string GetGreeting(DateTime time)
         {
-            if (time.Hour < 12)//todo pn хардкод
+            int hourMorning = 12, hourAfternoon = 17;
+            if (time.Hour < hourMorning)
             {
                 return GreetingsPhrases.Morning;
             }
 
-            if (time.Hour < 17)
+            if (time.Hour < hourAfternoon)
             {
                 return GreetingsPhrases.Afternoon;
             }
@@ -50,11 +53,11 @@ namespace Task02
         {
             if (args.State == StateGreeting.Hello)
             {
-                this.SayHello((Person)sender, args.Time);
+                this.SayHello((Person)sender, args.Time, args.OutputWriter);
             }
             else
             {
-                this.SayBye((Person)sender);
+                this.SayBye((Person)sender, args.OutputWriter);
             }
         }
     }

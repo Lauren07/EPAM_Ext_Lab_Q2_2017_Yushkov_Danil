@@ -6,18 +6,20 @@ namespace Task02
     public class Office : IObservable
     {
         private List<IObserver> persons;
+        private IOutput outputWriter;
 
         public event EventHandler<PersonEventArgs> PersonsHandler;
 
-        public Office()
+        public Office(IOutput outputWriter)
         {
             this.persons = new List<IObserver>();
+            this.outputWriter = outputWriter;
         }
 
         public void AddPerson(Person person, DateTime time)
         {
             this.WriteSatePerson(person, StateGreeting.Hello);
-            this.PersonsHandler?.Invoke(person, new PersonEventArgs(time, StateGreeting.Hello));
+            this.PersonsHandler?.Invoke(person, new PersonEventArgs(time, StateGreeting.Hello, this.outputWriter));
             this.RegisterObserver(person);
             this.persons.Add(person);
         }
@@ -32,18 +34,18 @@ namespace Task02
             this.WriteSatePerson(person, StateGreeting.Bye);
             this.RemoveObserver(person);
             this.persons.Remove(person);
-            this.PersonsHandler?.Invoke(person, new PersonEventArgs(StateGreeting.Bye));
+            this.PersonsHandler?.Invoke(person, new PersonEventArgs(StateGreeting.Bye, this.outputWriter));
         }
 
         private void WriteSatePerson(Person person, StateGreeting state)
         {
             if (state == StateGreeting.Hello)
             {
-                Console.WriteLine($"\n[На работу пришел {person.Name}]");
+                this.outputWriter.WriteMessage($"\n[На работу пришел {person.Name}]");
             }
             else
             {
-                Console.WriteLine($"\n[{person.Name} ушел домой]");
+                this.outputWriter.WriteMessage($"\n[{person.Name} ушел домой]");
             }
         }
 

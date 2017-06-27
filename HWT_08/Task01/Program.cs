@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Task01
 {
@@ -23,9 +25,15 @@ namespace Task01
 
         private static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+
             var comparer = new StringComparer(CompareStrings);
-            var strs = new[] { "ba", "aa", "fb", "y", "aaaa", "a" };
+            var strs = ConsoleUI.InputStrings();
             var sortedArray = Sort(strs, comparer);
+            ConsoleUI.OutputStrings(sortedArray);
+
+            Console.ReadKey();
         }
     }
 }

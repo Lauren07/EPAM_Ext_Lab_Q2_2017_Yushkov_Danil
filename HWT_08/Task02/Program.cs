@@ -10,7 +10,8 @@ namespace Task02
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            var office = new Office();
+            var writer = new ConsoleOutput();
+            var office = new Office(writer);
             var persons = new[] { new Person("Иван"), new Person("Петр"), new Person("Федор"), new Person("Виктор") };
             var time = new DateTime(2000, 1, 1, 8, 0, 0);
             office.AddPerson(persons[0], time);
@@ -19,7 +20,7 @@ namespace Task02
             office.DeletePerson(persons[1]);
             office.AddPerson(persons[3], time);
 
-	        Console.ReadKey();//todo pn атата
+	        Console.ReadKey(); //todo pn атата
         }
     }
 }

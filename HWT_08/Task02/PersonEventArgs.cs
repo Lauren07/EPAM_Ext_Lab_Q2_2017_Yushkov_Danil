@@ -8,15 +8,19 @@ namespace Task02
 
         public StateGreeting State { get; }
 
-        public PersonEventArgs(DateTime time, StateGreeting stateGreeting)
+        public IOutput OutputWriter;
+
+        public PersonEventArgs(DateTime time, StateGreeting stateGreeting, IOutput outputWriter)
         {
             this.Time = time;
             this.State = stateGreeting;
+            this.OutputWriter = outputWriter;
         }
 
-        public PersonEventArgs(StateGreeting stateGreeting)
+        public PersonEventArgs(StateGreeting stateGreeting, IOutput outputWriter)
         {
             this.State = stateGreeting;
+            this.OutputWriter = outputWriter;
         }
     }
 }
