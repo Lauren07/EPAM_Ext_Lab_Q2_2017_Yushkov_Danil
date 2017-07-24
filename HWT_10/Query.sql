@@ -69,7 +69,7 @@ DECLARE @minQuantity SMALLINT
         ,@maxQuantity SMALLINT
 SET @minQuantity = 3
 SET @maxQuantity = 10
-SELECT  OrderID
+SELECT  OrderID --(заказы не должны повторяться) у тебя повторяются айдишники заказов
 FROM  Northwind.[Order Details]
 WHERE Quantity BETWEEN @minQuantity AND @maxQuantity
 
@@ -113,9 +113,8 @@ WHERE ProductName LIKE '%cho_olade%'
 
 -- 5.1 Найти общую сумму всех заказов из таблицы Order Details с учетом количества закупленных товаров и скидок по ним. Результат округлить до сотых и высветить в стиле 1 для типа данных money. 
 -- Скидка (колонка Discount) составляет процент из стоимости для данного товара. Для определения действительной цены на проданный продукт надо вычесть скидку из указанной в колонке UnitPrice цены. Результатом запроса должна быть одна запись с одной колонкой с названием колонки 'Totals'.
-SELECT  CONVERT (MONEY, ROUND(SUM( (UnitPrice - Discount) * Quantity), 2), 1) AS 'Totals'
+SELECT  CONVERT (MONEY, ROUND(SUM( (UnitPrice - Discount) * Quantity), 2), 1) AS 'Totals' -- тут Discount в процентах имелся в виду
 FROM  Northwind.[Order Details] 
-
 
 -- 5.2 По таблице Orders найти количество заказов, которые еще не были доставлены (т.е. в колонке ShippedDate нет значения даты доставки).
 -- Использовать при этом запросе только оператор COUNT. Не использовать предложения WHERE и GROUP.
