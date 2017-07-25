@@ -17,10 +17,10 @@ AS
                  ON orders.OrderID = orderDetails.OrderID
             WHERE orders.EmployeeID = employees.EmployeeID
                   AND YEAR(@RequiredYear) = YEAR(orders.OrderDate)
-            ORDER BY ((orderDetails.UnitPrice - orderDetails.Discount) * orderDetails.Quantity) DESC) 
+            ORDER BY ((UnitPrice - (UnitPrice/100*Discount)) * orderDetails.Quantity) DESC) 
               AS 'Order ID'
 
-           ,(SELECT TOP(1) ((orderDetails.UnitPrice - orderDetails.Discount) * orderDetails.Quantity) AS Price
+           ,(SELECT TOP(1) ((UnitPrice - (UnitPrice/100*Discount)) * orderDetails.Quantity) AS Price
             FROM Northwind.Orders orders
             JOIN Northwind.[Order Details] orderDetails
                  ON orders.OrderID = orderDetails.OrderID
