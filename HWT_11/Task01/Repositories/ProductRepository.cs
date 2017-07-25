@@ -30,10 +30,8 @@ namespace Task01
                 connection.Open();
                 using (var reader = command.ExecuteReader())
                 {
-                    var i = 0;
                     while (reader.Read())
                     {
-                        i++;
                         products.Add(new Product
                         {
                             ProductID = (int)reader["ProductID"],
