@@ -5,7 +5,7 @@ using Task01.Entities;
 
 namespace Task01.Tests
 {
-    public class DALTest
+    public class DALTest//todo pn не круто, должен быть отдельный тестовый проект, чтобы проект DAL не зависил от него.
     {
         private string connectionName = "NorthwindConection";
         private DAL DAL;
@@ -15,8 +15,8 @@ namespace Task01.Tests
             this.DAL = new DAL(this.connectionName);
         }
 
-        [Test]
-        public void TestGetAllOrders()
+        [Test]//todo pn раз использовал NUnit использовал бы разное количество тесткейcов [TestCase(1, 2, 3)]
+		public void TestGetAllOrders()
         {
             var expectedCount = 830;
             var orders = this.DAL.GetAllOrders();
@@ -46,7 +46,7 @@ namespace Task01.Tests
         {
             var countOrders = this.DAL.GetAllOrders().Count;
             var expectedOrder = new Order {CustomerID = "VINET", EmployeeID = 4, OrderDate = DateTime.Now, RequiredDate = DateTime.Now, ShippedDate = DateTime.Now };
-            this.DAL.CreateOrder(expectedOrder);
+            this.DAL.CreateOrder(expectedOrder);//todo pn если в тесте что-то создано или обновлено, то после прохождения теста (не важно с каким результатом) БД должна быть приведена к начальному состоянию (можно после каждого теста приводить, можно после последнего). Это правило хорошего тона.
             Assert.AreEqual(countOrders + 1, this.DAL.GetAllOrders().Count);
         }
 

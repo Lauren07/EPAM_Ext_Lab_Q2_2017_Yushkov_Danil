@@ -21,8 +21,8 @@ namespace Task01
             using (var connection = new SqlConnection(this.connectionString))
             {
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM Northwind.Orders";
-                connection.Open();
+                command.CommandText = "SELECT * FROM Northwind.Orders";//todo pn нехорошо писать звездочку, потому что всегда таблица может измениться и мы долго будем искать, где у нас упало. Лучше перечислить все столбцы руками. Так будет безопаснее.
+				connection.Open();
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -50,7 +50,7 @@ namespace Task01
             using (var connection = new SqlConnection(this.connectionString))
             {
                 var command = connection.CreateCommand();
-                command.CommandText = "SELECT * FROM Northwind.Orders" +
+                command.CommandText = "SELECT * FROM Northwind.Orders" +//todo pn аналогично
                                       $" WHERE OrderID={orderID}";
                 connection.Open();
                 using (var reader = command.ExecuteReader())
