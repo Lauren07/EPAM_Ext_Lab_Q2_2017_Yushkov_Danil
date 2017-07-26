@@ -16,9 +16,9 @@ namespace Task01.Tests
         }
 
         [Test]//todo pn раз использовал NUnit использовал бы разное количество тесткейcов [TestCase(1, 2, 3)]
-		public void TestGetAllOrders()
+		public void TestGetAllOrders()//todo pn у меня это тест не прошел) Message:   Expected: 830 But was:  831 (и по этому тоже нужно подчищать за собой в тестах)
         {
-            var expectedCount = 830;
+			var expectedCount = 830;
             var orders = this.DAL.GetAllOrders();
             Assert.AreEqual(expectedCount, orders.Count);
 
