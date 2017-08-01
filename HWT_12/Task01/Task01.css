@@ -1,0 +1,9 @@
+li { color: #B22222; margin-bottom: 5px; font-weight: bold}
+ul { 
+	background-color: #EECBAD; 
+	width: 200px; 
+	list-style-type: none; 
+	padding: 6px; 
+	border-radius: 10px;
+	box-shadow: 6px 6px #B22222;
+}

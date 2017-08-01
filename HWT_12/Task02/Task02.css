@@ -1,0 +1,41 @@
+.RegForm {
+	background-color: #00BFFF; 
+	width: 450px;
+	border: 2px solid #1E90FF;
+}
+.HeadRegForm {
+	font-size: 25px;
+	padding: 15px 14px 11px 14px;
+	border-bottom: 1px solid #F8F8FF;
+}
+.BodyRegForm {
+	padding: 18px 18px 18px 15px;
+}
+p {
+	margin: 0px;
+	color: #F8F8FF;
+	width: 100%;
+}
+input {
+	width: 100%; 
+}
+.PasswordField div {
+	display: inline-block;
+	width:48%;
+}
+.PasswordField div:first-child {
+	margin-right: 4%; 
+}
+.BodyRegForm  > div {
+	width: 380px;
+	margin-bottom: 20px
+}
+.SubmitField  {
+	width: 20%;
+	margin-top:30px; 
+}
+.SubmitField input {
+	background-color: #FFE4C4;
+	border:0px;
+	height: 30px; 
+}
