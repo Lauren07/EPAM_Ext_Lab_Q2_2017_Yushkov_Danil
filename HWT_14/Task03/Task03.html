@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -33,7 +33,32 @@
         </select>
     </div>
 </div>
-
+<div class="blockSelector">
+    <p>Available</p>
+    <div class="block">
+        <select multiple id="leftBox">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+</div>
+<ul>
+    <li><button onclick="buttonSelectorHandler(this,'leftBox','rightBox')" value=">>">>></button></li>
+    <li><button onclick="buttonSelectorHandler(this, 'leftBox','rightBox')" value=">">></button></li>
+    <li><button onclick="buttonSelectorHandler(this, 'rightBox','leftBox')" value="<"><</button></li>
+    <li><button onclick="buttonSelectorHandler(this, 'rightBox', 'leftBox')" value="<<"><<</button></li>
+</ul>
+<div class="blockSelector">
+    <p>Selected</p>
+    <div class="block">
+        <select multiple id="rightBox">
+            <option>Option 4</option>
+            <option>Option 5</option>
+            <option>Option 6</option>
+        </select>
+    </div>
+</div>
 <script src="Task03.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
