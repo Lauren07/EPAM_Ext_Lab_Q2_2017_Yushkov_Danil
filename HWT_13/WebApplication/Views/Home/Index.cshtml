@@ -1,0 +1,56 @@
+﻿@using WebApplication.Models
+@using PagedList.Mvc;
+@model PagedList.IPagedList<OrderViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/index.css")
+
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<div class="panel panel-default">
+    
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-2">
+                    <h3>Orders list</h3>
+                </div>
+                <div class="col-md-2 col-md-offset-8">
+                    <a href="/Home/EditOrder" class="btn btn-primary" id="btnAddOrder">
+                        <span class="glyphicon glyphicon-plus"></span> Add Order
+                    </a>
+                </div>
+            </div>
+        </div>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Created at</th>
+            <th>Actions</th>
+        </tr>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => order.OrderID)</td>
+                <td>@Html.ActionLink(order.CompanyName, "Details", "Home", new {orderID = order.OrderID}, new {@class = "nameItem"})</td>
+                <td>@Html.DisplayFor(model => order.OrderDate)</td>
+                <td>
+                    <a href="/Home/EditOrder?OrderID=@order.OrderID" class="editBtn"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="/Home/ConfirmDelete?OrderID=@order.OrderID" class="editBtn"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+@section scripts {
+    @Scripts.Render("~/Scripts/modaldialog.js");
+}

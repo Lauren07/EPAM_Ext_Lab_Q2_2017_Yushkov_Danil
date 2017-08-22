@@ -1,0 +1,17 @@
+﻿@model int
+<div class="modal-content">
+<div class="modal-header">
+    <h4>Подтверждение удаления</h4>
+</div>
+    <div class="modal-body">
+        <p>Вы действительно хотите удалить заказ?</p>
+    @using (Html.BeginForm("DeleteOrder", "Home", FormMethod.Post, new { role = "form", id = "delForm"}))
+    {
+        @Html.Hidden("orderID",Model)
+    }
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+        <button type="submit" class="btn btn-primary" form="delForm">Да</button>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@model WebApplication.Models.OrderInfoViewModel
+
+@Styles.Render("~/Content/autocompleteCss")
+@Styles.Render("~/Content/modaldialog.css")
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal" area-hidden="true">X</button>
+        <h4>Детали заказа</h4>
+    </div>
+    <div class="modal-body">
+        <dl class="dl-horizontal">
+            <dt>ID Заказа:</dt>
+            <dd>@Html.DisplayFor(model=>model.OrderID)</dd>
+            <dt>Компания заказчик:</dt>
+            <dd>@Html.DisplayFor(model => model.CompanyName)</dd>
+            <dt>Контактный телефон:</dt>
+            <dd>@Html.DisplayFor(model=>model.Phone)</dd>
+            <dt>Дата заказа:</dt>
+            <dd>@Html.DisplayFor(model=>model.OrderDate)</dd>
+            <dt>Адрес доставки:</dt>
+            <dd>@Html.DisplayFor(model=>model.FullShipAddress)</dd>
+        </dl>
+
+        
+        @using (Ajax.BeginForm("AddProduct","Home", new AjaxOptions { UpdateTargetId = "resultAjax", OnSuccess="productAdded", OnBegin = "productAdding"}, 
+            new { id = "formProduct" }))
+        {}
+        @Html.HiddenFor(x=>x.OrderID, new {form="formProduct"})
+        @Html.Hidden("ProductID", null, new { form = "formProduct" })
+        <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <th>Название продукта</th>
+                <th>Цена (за шт.)</th>
+                <th>Кол-во (шт.)</th>
+                <th>Скидка (за шт.)</th>
+            </tr>
+            @foreach (var order in Model.Products)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => order.ProductName)</td>
+                    <td>@Html.DisplayFor(model => order.UnitPrice)</td>
+                    <td>@Html.DisplayFor(model => order.Quantity)</td>
+                    <td>@Html.DisplayFor(model => order.Discount)%</td>
+                </tr>
+            }
+            <tr id="resultAjax"></tr>
+            <tr id="inputRow">
+                <td>@Html.TextBox("ProductName", null, new {form = "formProduct", @class="form-control"})</td>
+                <td>@Html.TextBox("UnitPrice", null, new {form = "formProduct", @class = "form-control" })</td>
+                <td>@Html.TextBox("Quantity", null, new {form = "formProduct", @class = "form-control" })</td>
+                <td>@Html.TextBox("Discount", null, new {form = "formProduct", @class = "form-control" })</td>
+                <td><a href="#" id="btnAddProduct"><span class="glyphicon glyphicon-ok"></span></a></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>Общая сумма:</td>
+                <td><span id="totalPrice">@Html.DisplayFor(model => model.TotalPrice)</span> руб.</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@Scripts.Render("~/Scripts/productsEditor.js")
+@Scripts.Render("~/bundles/autocomplete")
+@Scripts.Render("~/bundles/jqueryval")
+
