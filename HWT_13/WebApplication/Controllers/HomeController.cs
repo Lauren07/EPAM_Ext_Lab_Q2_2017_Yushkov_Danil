@@ -8,8 +8,8 @@ using PagedList;
 
 namespace WebApplication.Controllers
 {
-    public class HomeController : Controller
-    {
+    public class HomeController : Controller//todo pn мог бы и переименовать контроллер)
+	{
         private OrderService orderService;
         private ProductService productService;
 
@@ -21,7 +21,7 @@ namespace WebApplication.Controllers
 
         public ActionResult Index(int page = 1)
         {
-            var pageSize = 15;
+            var pageSize = 15;//todo pn в константы
             var orders = Mapper.Map<IEnumerable<OrderDTO>, IEnumerable<OrderViewModel>>(this.orderService.GetAllOrders());
             return this.View(orders.ToPagedList(page, pageSize));
         }
@@ -55,14 +55,14 @@ namespace WebApplication.Controllers
         {
             if (orderID == null)
             {
-                this.ViewData["ModalDialogHead"] = "Добавление заказа";
-                this.ViewData["ModalBtnSubmit"] = "Добавить";
-                return this.PartialView(new EditOrderViewModel());
+                this.ViewData["ModalDialogHead"] = "Добавление заказа";//todo pn в ресурсы
+				this.ViewData["ModalBtnSubmit"] = "Добавить";//todo pn в ресурсы
+				return this.PartialView(new EditOrderViewModel());
             }
 
-            this.ViewData["ModalBtnSubmit"] = "Изменить";
-            this.ViewData["ModalDialogHead"] = "Изменение заказа";
-            var targetOrder = Mapper.Map<OrderDTO, EditOrderViewModel>(this.orderService.GetOrder(orderID.Value));
+            this.ViewData["ModalBtnSubmit"] = "Изменить";//todo pn в ресурсы
+			this.ViewData["ModalDialogHead"] = "Изменение заказа";//todo pn в ресурсы
+			var targetOrder = Mapper.Map<OrderDTO, EditOrderViewModel>(this.orderService.GetOrder(orderID.Value));
             return this.PartialView(targetOrder);
         }
 

@@ -68,14 +68,14 @@ namespace DataAccessLayer.Entities
 
         public string ShipCountry;
 
-        //public int ShipVia;
+		//public int ShipVia;//todo pn закомментированные строки не заливаем
 
-        //public int Freight;
+		//public int Freight;
 
-        //public string ShipName;
+		//public string ShipName;
 
-        //public string ShipRegion;
+		//public string ShipRegion;
 
-        //public string ShipPostalCode;
-    }
+		//public string ShipPostalCode;
+	}
 }

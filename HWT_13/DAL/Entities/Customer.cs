@@ -18,7 +18,7 @@ namespace DataAccessLayer.Entities
 
         public string GenerateID()
         {
-            var length = 5;
+            var length = 5;//todo pn вынес бы в константу
             var resultID = string.Empty;
             for (var i = 0; i < length; i++)
             {
