@@ -8,7 +8,7 @@ namespace DataAccessLayer
 
         static Randomizer()
         {
-            Random = new Random();    
+            Random = new Random();
         }
     }
 }

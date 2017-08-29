@@ -3,15 +3,17 @@ using System.Web.Mvc;
 using AutoMapper;
 using BLL.Models;
 using BLL.Services;
+using HWT_13.Resources;
 using WebApplication.Models;
 using PagedList;
 
 namespace WebApplication.Controllers
 {
-    public class HomeController : Controller//todo pn мог бы и переименовать контроллер)
-	{
+    public class HomeController : Controller
+    {
         private OrderService orderService;
         private ProductService productService;
+        private const int PageSize = 15;
 
         public HomeController()
         {
@@ -21,9 +23,9 @@ namespace WebApplication.Controllers
 
         public ActionResult Index(int page = 1)
         {
-            var pageSize = 15;//todo pn в константы
+            Session["CurPage"] = page;
             var orders = Mapper.Map<IEnumerable<OrderDTO>, IEnumerable<OrderViewModel>>(this.orderService.GetAllOrders());
-            return this.View(orders.ToPagedList(page, pageSize));
+            return this.View(orders.ToPagedList(page, PageSize));
         }
 
         public ActionResult Details(int? orderID)
@@ -46,8 +48,9 @@ namespace WebApplication.Controllers
         [HttpPost]
         public ActionResult DeleteOrder(int orderID)
         {
+            var s = Session["CurPage"];
             this.orderService.DeleteOrder(orderID);
-            return this.RedirectToAction("Index");
+            return this.RedirectToAction("Index", new { page = Session["CurPage"] });
         }
 
         [HttpGet]
@@ -55,14 +58,14 @@ namespace WebApplication.Controllers
         {
             if (orderID == null)
             {
-                this.ViewData["ModalDialogHead"] = "Добавление заказа";//todo pn в ресурсы
-				this.ViewData["ModalBtnSubmit"] = "Добавить";//todo pn в ресурсы
-				return this.PartialView(new EditOrderViewModel());
+                this.ViewData["ModalDialogHead"] = ViewRecources.TittleAddOrder;
+                this.ViewData["ModalBtnSubmit"] = ViewRecources.NameBtnAddOrder;
+                return this.PartialView(new EditOrderViewModel());
             }
 
-            this.ViewData["ModalBtnSubmit"] = "Изменить";//todo pn в ресурсы
-			this.ViewData["ModalDialogHead"] = "Изменение заказа";//todo pn в ресурсы
-			var targetOrder = Mapper.Map<OrderDTO, EditOrderViewModel>(this.orderService.GetOrder(orderID.Value));
+            this.ViewData["ModalBtnSubmit"] = ViewRecources.NameBtnEditOrder;
+            this.ViewData["ModalDialogHead"] = ViewRecources.TittleEditOrder;
+            var targetOrder = Mapper.Map<OrderDTO, EditOrderViewModel>(this.orderService.GetOrder(orderID.Value));
             return this.PartialView(targetOrder);
         }
 

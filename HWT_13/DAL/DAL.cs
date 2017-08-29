@@ -125,6 +125,7 @@ namespace DataAccessLayer
 
         public List<Product> GetAllProducts()
         {
+
             return this.productRepository.GetAllProducts();
         }
     }

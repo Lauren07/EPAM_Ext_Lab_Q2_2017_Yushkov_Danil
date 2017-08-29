@@ -39,9 +39,10 @@
     </div>
     <div class="modal-footer">
         <button class="btn btn-default" data-dismiss="modal">Отмена</button>   
-        <button type="submit" class="btn btn-primary" form="editForm">@ViewData["ModalBtnSubmit"]</button>    
+        <button type="submit" class="btn btn-primary" form="editForm" id="btnSubmitForm">@ViewData["ModalBtnSubmit"]</button>    
     </div>
 </div>
 
 
 @Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/Scripts/editFormVal.js")

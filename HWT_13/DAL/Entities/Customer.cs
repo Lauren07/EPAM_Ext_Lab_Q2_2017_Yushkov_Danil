@@ -4,6 +4,8 @@ namespace DataAccessLayer.Entities
 {
     public class Customer
     {
+        private const int LengthID = 5;
+
         public string CustomerID;
 
         public string CompanyName;
@@ -18,9 +20,8 @@ namespace DataAccessLayer.Entities
 
         public string GenerateID()
         {
-            var length = 5;//todo pn вынес бы в константу
             var resultID = string.Empty;
-            for (var i = 0; i < length; i++)
+            for (var i = 0; i < LengthID; i++)
             {
                 resultID += Convert.ToChar(Randomizer.Random.Next(65, 90));
             }

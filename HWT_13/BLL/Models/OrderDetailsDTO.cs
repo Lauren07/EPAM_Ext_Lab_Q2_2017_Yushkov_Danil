@@ -14,7 +14,8 @@ namespace BLL.Models
 
         public void CountPrice()
         {
-            this.TotalPrice = Math.Round(this.Products.Sum(prod => prod.ExtendedPrice),2);//todo pn хардкод. мне приходится останавливаться на этой строке и думать, что за 2ка.
+            var accuracy = 2;
+            this.TotalPrice = Math.Round(this.Products.Sum(prod => prod.ExtendedPrice), accuracy);
         }
     }
 }

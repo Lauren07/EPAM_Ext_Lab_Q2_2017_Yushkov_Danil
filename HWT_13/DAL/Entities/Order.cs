@@ -67,15 +67,5 @@ namespace DataAccessLayer.Entities
         public string ShipCity;
 
         public string ShipCountry;
-
-		//public int ShipVia;//todo pn закомментированные строки не заливаем
-
-		//public int Freight;
-
-		//public string ShipName;
-
-		//public string ShipRegion;
-
-		//public string ShipPostalCode;
-	}
+    }
 }

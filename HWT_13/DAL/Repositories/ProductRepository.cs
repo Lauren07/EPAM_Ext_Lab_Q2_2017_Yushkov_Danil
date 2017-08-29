@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using DataAccessLayer.Entities;
@@ -125,14 +126,10 @@ namespace DataAccessLayer
             using (var connection = new SqlConnection(this.connectionString))
             {
                 var command = connection.CreateCommand();
-                command.CommandText = "Northwind.CustOrdersDetail";
-                command.CommandType = CommandType.StoredProcedure;
-                var orderParam = new SqlParameter
-                {
-                    ParameterName = "@OrderID",
-                    Value = orderID
-                };
-                command.Parameters.Add(orderParam);
+                command.CommandText = "SELECT P.ProductID, ProductName, Od.UnitPrice, Quantity, Discount" +
+                                      " FROM Northwind.Products P, Northwind.[Order Details] Od" +
+                                      " WHERE Od.ProductID = P.ProductID and Od.OrderID = @orderID";
+                command.Parameters.AddWithValue("@orderID", orderID);
 
                 connection.Open();
                 using (var reader = command.ExecuteReader())
@@ -144,10 +141,9 @@ namespace DataAccessLayer
                             OrderID = orderID,
                             ProductID = (int)reader["ProductID"],
                             ProductName = (string)reader["ProductName"],
-                            Discount = (int)reader["Discount"],
-                            UnitPrice = (double)((decimal)reader["UnitPrice"]),
+                            Discount = (int)((float)reader["Discount"] * 100),
+                            UnitPrice = Math.Round((double)((decimal)reader["UnitPrice"]), 2),
                             Quantity = (short)reader["Quantity"],
-                            ExtendedPrice = (double)((decimal)reader["ExtendedPrice"])
                         });
                     }
                 }
