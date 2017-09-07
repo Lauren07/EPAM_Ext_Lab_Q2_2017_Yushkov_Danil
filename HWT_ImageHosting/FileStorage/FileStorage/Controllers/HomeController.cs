@@ -6,14 +6,6 @@ namespace FileStorage.Controllers
 {
     public class HomeController : Controller
     {
-        private UserManager userManager;
-        private FileService fileService;
-
-        public HomeController()
-        {
-            userManager = new UserManager();
-            fileService = new FileService();
-        }
 
         public ActionResult Index()
         {
