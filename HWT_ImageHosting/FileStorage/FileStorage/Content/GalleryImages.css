@@ -1,0 +1,76 @@
+﻿figure {
+    width: 300px;
+    height: 225px;
+}
+
+.imagesRow {
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+.thumbnail {
+    background-color: #f0fdfd
+}
+
+figcaption {
+    opacity: 0.75;
+}
+
+#custom-search-form {
+    margin:0;
+    margin-top: 5px;
+    padding: 0;
+}
+ 
+#custom-search-form .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+ 
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: width  0.2s ease-in-out;
+    -moz-transition:width  0.2s ease-in-out;
+    -o-transition: width  0.2s ease-in-out;
+    transition: width  0.2s ease-in-out;
+}
+ 
+#custom-search-form button {
+    border: 0;
+    background: none;
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+ 
+.search-query:focus + button {
+    z-index: 3;   
+}   
+.search-query:focus{
+    width: 260px;
+}   
+
+.well {
+    margin-top: 25px;
+}
+
+.vcenter .breadcrumb {
+    margin-bottom: 0px;
+    margin-top: 15px;
+    background-color: #d5dbec;
+}
+
+.breadcrumb li {
+    font-size: 17px;
+}

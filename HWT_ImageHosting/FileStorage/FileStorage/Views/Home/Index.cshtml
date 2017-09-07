@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Загрузка изображения</h2>
+        <p>Вы можете загрузить любое изображение размером не более 2мб.</p>
+        <p>
+            @Html.ActionLink("Загрузить", "LoadFile", "File", null, new {@class= "btn btn-primary btn-lg modal-btn", role="button", id="loadPhoto"})
+        </p>
+
+    </div>
+    <div class="col-md-7">
+        @{
+            if (!Request.IsAuthenticated)
+            {
+                <div class="alert alert-warning">Загрузка файлов доступна только для зарегестрированных пользователей!</div>
+            }
+        }
+    </div>
+</div>
+
+

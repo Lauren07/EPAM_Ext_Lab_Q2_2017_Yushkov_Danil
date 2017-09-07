@@ -1,0 +1,48 @@
+﻿@model FileStorage.Models.UserLoginViewModel
+@Styles.Render("~/Content/userform.css")
+<div class="modal-content">
+    <div class="modal-header">
+        <h4>Вход в систему</h4>
+    </div>
+    <div class="modal-body">
+        
+        @using (Ajax.BeginForm("Login", "Account", new AjaxOptions { OnSuccess = "HandlerFailLogin" }, new { id = "loginForm", role = "form", @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.Label("Логин:", new { @for = "Login", @class = "col-sm-4 control-label" })
+                <div class="col-sm-8">
+                    @Html.EditorFor(m => m.Login, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.Login)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Пароль:", new { @for = "Password", @class = "col-sm-4 control-label" })
+                <div class="col-sm-8">
+                    @Html.EditorFor(m => m.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <div class="checkbox">
+                        <label>
+                             Запомнить меня @Html.EditorFor(m => m.RememberMe, new { htmlAttributes = new { type = "checkbox" } })                           
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="errorLogIn" class="alert alert-danger">Неверный логин или пароль</div>
+
+            <div class="inscriptionReg">
+                <small>Нет аккаунта? Вы можете @Html.ActionLink("зарегистрироваться", "Registration", "Account", null, new { @class = "modal-btn" }).</small>
+            </div>
+        }
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <button type="submit" class="btn btn-primary" form="loginForm" id="btnSubmitForm">Войти</button>
+    </div>
+</div>
+@Scripts.Render("~/Scripts/modaldialog.js")
+@Scripts.Render("~/bundles/jqueryval")

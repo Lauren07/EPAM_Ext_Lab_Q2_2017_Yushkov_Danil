@@ -1,0 +1,12 @@
+﻿@using FileStorage.Models
+@model IEnumerable<RoleViewModel>
+    
+
+@Html.DropDownList("RoleId",new SelectList(Model,"Id","Name"), new {@class="form-control"})
+
+@foreach (var role in Model)
+{
+    <p class="info-role" id="info-@role.Id"><small>Доступ к: @role.Description</small></p>
+}
+
+@Scripts.Render("~/Scripts/rolesSelector.js")

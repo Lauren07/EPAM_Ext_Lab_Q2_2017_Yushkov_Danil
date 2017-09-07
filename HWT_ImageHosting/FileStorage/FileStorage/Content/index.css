@@ -1,0 +1,10 @@
+﻿.container .col-md-7 {
+    padding: 0
+}
+.jumbotron {
+    margin-bottom: 3px;
+}
+
+body:not(#navheader) {
+    background-color: #d5dbec;    
+}

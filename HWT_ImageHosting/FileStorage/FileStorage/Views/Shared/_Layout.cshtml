@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-top" id="navheader">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="~/">Photo Hosting</a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="~/File/Gallery">Галерея</a></li>
+            </ul>
+            @Html.Partial("~/Views/Account/ProfilePreview.cshtml")
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+    </footer>
+</div>
+    
+<script>
+    var isAuthorized = '@Request.IsAuthenticated';
+</script>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿
+img {
+
+    width:auto;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+.thumbnail {
+    background-color: #222222;
+    margin-bottom: 10px;
+}
+
+.information-panel .panel-body {
+    background-color: #c2cded;
+}
+
+.information-panel .panel-heading  {
+    background-color: #8694bc;
+}
+
+.nameAttr {
+    width: 30%;
+}
+
+h2 a {
+    margin-left: 10px;
+}
+
+.dropdown-settings .glyphicon {
+    font-size: 25px;
+}
+
+.dropdown-settings {
+    text-align: center;
+}
+
+.dropdown-settings .dropdown-menu {
+    margin-right:-1000px;
+    min-width: 0px;
+    left: 50px;
+    top: -15px;
+    background-color: transparent;
+}
+.dropdown-settings:hover > .dropdown-menu { 
+    display: block; 
+}
+
+.dropdown-settings .dropdown-menu > li {
+    display: inline-block;
+}

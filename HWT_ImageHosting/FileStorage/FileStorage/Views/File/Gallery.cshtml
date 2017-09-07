@@ -1,0 +1,72 @@
+﻿@using FileStorage.Helpers
+@using PagedList.Mvc
+@model PagedList.IPagedList<FileStorage.Models.ImagePreviewViewModel>
+@Styles.Render("~/Content/GalleryImages.css")
+@Styles.Render("~/Content/imgEffects.css")
+
+@{
+    ViewBag.Title = "Gallery";
+    var CountImagesInRow = 3;
+}
+
+<div class="row center-block">
+    <div class="col-md-4 vcenter">
+        <ol class="breadcrumb">
+            @if (ViewData["SectionImages"] == "AllImages")
+            {
+                <li class="active">Все изображения</li>
+                <li>@Html.ActionLink("Мои изображения", "MyImages", "File", null, new { id = "refMyImages" })</li>
+            }
+            else if (ViewData["SectionImages"] == "UserImages")
+            {
+                <li>@Html.ActionLink("Все изображения", "Gallery", "File")</li>
+                <li class="active">Мои изображения</li>
+            }
+            else
+            {
+                <li>@Html.ActionLink("Все изображения", "Gallery", "File")</li>
+                <li>@Html.ActionLink("Мои изображения", "MyImages", "File", null, new { id = "refMyImages" })</li>
+            }
+        </ol>     
+    </div><!-----
+---><div class="col-md-4 col-md-offset-4 vcenter">
+        @using (Html.BeginForm("Gallery", "File", FormMethod.Post, new {role = "form", @class = "form-search form-horizontal pull-right", id = "custom-search-form" }))
+        {
+            <div class="input-append span12">
+                @Html.Editor("imageName", new { htmlAttributes = new { @class = "search-query", placeholder = "Поиск по имени", type = "text" } })
+                <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+        }
+    </div>
+</div>
+
+@if (Model.Count() == 0)
+{
+    <div class="well">Не найдено ни одного изображения.</div>
+}
+
+@for (var i = 0; i < (Model.Count() / CountImagesInRow) + (Model.Count() % CountImagesInRow != 0 ? 1 : 0); i++)
+{
+    <div class="row imagesRow">
+    @for (int j = 0, ind= i * CountImagesInRow; j < CountImagesInRow && (j+(i* CountImagesInRow)) < Model.Count(); j++, ind = j + (i * CountImagesInRow))
+    {
+         <div class="col-md-4">
+             <div class="grid">
+             <figure class="effect-zoe">
+                 <img src="@Model[ind].ImageSource" class="gallImg">
+                 <figcaption>
+                     <h2>@Model[ind].Name</h2>
+                     <p class="icon-links">
+                         @Html.ActionLinkInnerHtml("Image", "File", new {imgId=Model[ind].Id}, null, "<span class=\"icon-eye\"></span>")
+                         @Html.ActionLinkInnerHtml("ImageLink", "File", new { imgId = Model[ind].Id }, new {@class="modal-btn"}, "<span class=\"icon-paper-clip\"></span>")
+                     </p>
+                     <p class="description">@Model[ind].Description</p>
+                 </figcaption>
+             </figure>
+             </div>
+         </div>
+    }
+    </div>
+}
+
+@Html.PagedListPager(Model, page => Url.Action("Gallery",  new { page })) 

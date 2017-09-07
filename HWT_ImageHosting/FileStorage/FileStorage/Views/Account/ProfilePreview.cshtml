@@ -1,0 +1,21 @@
+﻿<ul class="nav navbar-nav navbar-right">
+    @{
+        if (Request.IsAuthenticated)
+        {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Профиль: @HttpContext.Current.User.Identity.Name <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Мои изображения", "MyImages", "File")</li>
+                    <li>@Html.ActionLink("Сменить пароль", "ChangePassword", "Account")</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Выйти", "Logoff", "Account")</li>
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Войти","Login","Account", null, new {@class="modal-btn"})</li>
+            <li>@Html.ActionLink("Регистрация","Registration","Account",null, new {@class="modal-btn"})</li>
+        }
+    }
+</ul>

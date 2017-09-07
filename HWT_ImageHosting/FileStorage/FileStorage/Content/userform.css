@@ -1,0 +1,15 @@
+﻿.form-horizontal .control-label{
+    text-align: left;
+}
+
+.inscriptionReg {
+    margin-top: 20px;
+}
+
+.modal-content .modal-footer {
+    margin-top: 0;
+}
+
+#errorLogIn {
+    display: none
+}
